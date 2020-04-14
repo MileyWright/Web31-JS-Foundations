@@ -23,7 +23,8 @@ const monthlyInterestRate = interestRate / 12 ;
 const periods = years*12;
 
 
-
+console.log(monthlyInterestRate)
+console.log(periods)
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe to run calculations on your numbers. Save the final value into a variable called monthlyRate.
 
