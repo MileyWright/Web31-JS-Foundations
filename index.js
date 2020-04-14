@@ -32,8 +32,8 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 var monthlyRate = principal * ((monthlyInterestRate * Math.pow((1  + monthlyInterestRate), periods)) / (Math.pow((1  + monthlyInterestRate), periods) - 1));
-var monthlyRate = Math.round(monthlyRate * 100)/ 100
-console.log(monthlyRate);
+var monthlyRate = Math.round(monthlyRate * 100)/ 100;
+console.log(monthlyRate)
 
 // const numberator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, periods);
 // const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
@@ -109,8 +109,15 @@ For example, variableInterestRate(200000, 0.04, 30) should return:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-
-
+function variableInterestRate(P, I, N) {
+    I -= 0.02;
+    for( let i = 0; i < 9; i ++){
+        let monthlyRate = Math.round(P * (((I/12) * Math.pow((1 + (I/12)), (N * 12))) / (Math.pow((1 + (I/12)), (N * 12)) - 1)) *100)/100
+        console.log(`${name}, with an interest rate of ${I.toFixed(3)}, your monthly rate is $${monthlyRate}`)
+        I+= 0.005
+    };
+}
+variableInterestRate(200000, 0.04, 30)
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
